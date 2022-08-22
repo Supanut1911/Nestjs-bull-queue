@@ -2,21 +2,11 @@ import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { RedisConfig, RedisConfigOption } from './configs/redis.config';
 import { MessageProducerModule } from './message-producer/message-producer.module';
 
 @Module({
-  imports: [
-    BullModule.forRoot({
-      redis: {
-        host: 'localhost',
-        port: 6379,
-      },
-    }),
-    BullModule.registerQueue({
-      name: 'message-queue',
-    }),
-    MessageProducerModule,
-  ],
+  imports: [MessageProducerModule],
   controllers: [AppController],
   providers: [AppService],
 })
