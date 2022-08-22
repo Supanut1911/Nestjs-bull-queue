@@ -4,9 +4,10 @@
 
 ---
 
-```
+````
 npm install --save @nestjs/bull bull
 
-```
 
-npm install --save-dev @types/bull
+```npm install --save-dev @types/bull
+
+````
