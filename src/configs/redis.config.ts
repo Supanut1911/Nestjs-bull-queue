@@ -7,6 +7,12 @@ export const RedisConfig: BullRootModuleOptions = {
   },
 };
 
-export const RedisConfigOption: BullModuleOptions = {
-  name: 'message-queue',
-};
+// export const RedisConfigOption: BullModuleOptions = [
+//   {
+//     name: 'message-queue',
+//   },
+//   {
+//     name: 'message-queue',
+//   },
+
+// ]

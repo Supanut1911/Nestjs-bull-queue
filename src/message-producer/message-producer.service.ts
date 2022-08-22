@@ -5,13 +5,11 @@ import { Queue } from 'bull';
 @Injectable()
 export class MessageProducerService {
   constructor(
-    @InjectQueue('message-queue')
+    @InjectQueue('transcrypt')
     private readonly queue: Queue,
   ) {}
 
   async sendMessage(message: string) {
-    await this.queue.add('message-job', {
-      text: message,
-    });
+    await this.queue.add('message-job', { text: message });
   }
 }
