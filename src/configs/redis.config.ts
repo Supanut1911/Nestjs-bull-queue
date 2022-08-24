@@ -6,13 +6,3 @@ export const RedisConfig: BullRootModuleOptions = {
     port: 6379,
   },
 };
-
-// export const RedisConfigOption: BullModuleOptions = [
-//   {
-//     name: 'message-queue',
-//   },
-//   {
-//     name: 'message-queue',
-//   },
-
-// ]

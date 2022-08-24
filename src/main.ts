@@ -20,7 +20,7 @@ async function bootstrap() {
     // queues: [new BullAdapter(new Queue('test'))],
     queues: [
       new BullAdapter(new Queue('transcrypt')),
-      new BullAdapter(new Queue('cat')),
+      new BullAdapter(new Queue('transcrypt-queue')),
     ],
     serverAdapter,
   });

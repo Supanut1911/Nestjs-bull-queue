@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 import { RedisConfig } from 'src/configs/redis.config';
 import { MessageProducerController } from './message-producer.controller';
 import { MessageProducerService } from './message-producer.service';
-import { MessageConsumer } from './message.consumer';
+import { MessageConsumer, TranscryptConsumer } from './message.consumer';
 
 @Module({
   imports: [
@@ -13,11 +13,14 @@ import { MessageConsumer } from './message.consumer';
         name: 'transcrypt',
       },
       {
+        name: 'transcrypt-queue',
+      },
+      {
         name: 'file-operation-queue',
       },
     ),
   ],
   controllers: [MessageProducerController],
-  providers: [MessageProducerService, MessageConsumer],
+  providers: [MessageProducerService, MessageConsumer, TranscryptConsumer],
 })
 export class MessageProducerModule {}
